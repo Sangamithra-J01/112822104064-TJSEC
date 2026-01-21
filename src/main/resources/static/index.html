@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe Management System</h1>
+            <p class="subtitle">Manage your favorite recipes with ease</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Recipe Form Section -->
+            <section class="form-section">
+                <h2 id="form-title">Add New Recipe</h2>
+                <form id="recipeForm">
+                    <input type="hidden" id="recipeId">
+                    
+                    <div class="form-group">
+                        <label for="name">Recipe Name *</label>
+                        <input type="text" id="name" name="name" required 
+                               placeholder="Enter recipe name" minlength="2" maxlength="100">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" name="category">
+                                <option value="">Select category</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                                <option value="Dessert">Dessert</option>
+                                <option value="Snack">Snack</option>
+                                <option value="Beverage">Beverage</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servings">Servings</label>
+                            <input type="number" id="servings" name="servings" 
+                                   placeholder="Number of servings" min="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prepTime">Prep Time (min)</label>
+                            <input type="number" id="prepTime" name="prepTime" 
+                                   placeholder="Preparation time" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cookTime">Cook Time (min)</label>
+                            <input type="number" id="cookTime" name="cookTime" 
+                                   placeholder="Cooking time" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients *</label>
+                        <textarea id="ingredients" name="ingredients" required 
+                                  placeholder="Enter ingredients (one per line)" 
+                                  rows="5" minlength="10" maxlength="1000"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instructions">Instructions *</label>
+                        <textarea id="instructions" name="instructions" required 
+                                  placeholder="Enter cooking instructions" 
+                                  rows="6" minlength="10" maxlength="2000"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            Add Recipe
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" 
+                                onclick="resetForm()">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Recipe List Section -->
+            <section class="list-section">
+                <div class="list-header">
+                    <h2>Recipe List</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search recipes...">
+                        <button onclick="searchRecipes()" class="btn btn-search">Search</button>
+                        <button onclick="loadRecipes()" class="btn btn-refresh">Refresh</button>
+                    </div>
+                </div>
+                
+                <div id="recipeList" class="recipe-grid">
+                    <!-- Recipes will be loaded here dynamically -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
