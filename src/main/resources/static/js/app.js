@@ -1,5 +1,4 @@
 const API_URL = 'http://localhost:8080/api/recipes';
-let editingRecipeId = null;
 
 // Load all recipes when page loads
 document.addEventListener('DOMContentLoaded', () => {
@@ -201,7 +200,7 @@ async function searchRecipes() {
         displayRecipes(recipes);
         
         if (recipes.length === 0) {
-            showNotification('No recipes found matching your search', 'error');
+            showNotification('No recipes found matching your search', 'success');
         }
     } catch (error) {
         console.error('Error searching recipes:', error);
@@ -216,7 +215,6 @@ function resetForm() {
     document.getElementById('recipeId').value = '';
     document.getElementById('form-title').textContent = 'Add New Recipe';
     document.getElementById('submitBtn').textContent = 'Add Recipe';
-    editingRecipeId = null;
 }
 
 // Show notification
@@ -232,6 +230,9 @@ function showNotification(message, type) {
 
 // Escape HTML to prevent XSS
 function escapeHtml(text) {
+    if (text === null || text === undefined) {
+        return '';
+    }
     const map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -239,7 +240,7 @@ function escapeHtml(text) {
         '"': '&quot;',
         "'": '&#039;'
     };
-    return text.replace(/[&<>"']/g, m => map[m]);
+    return String(text).replace(/[&<>"']/g, m => map[m]);
 }
 
 // Allow Enter key in search
