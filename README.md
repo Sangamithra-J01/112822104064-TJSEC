@@ -1,10 +1,10 @@
 # Recipe Management API
 
-A full-stack Recipe Management System built with **Spring Boot 3.1.5** and **Java 21**, featuring RESTful APIs and a responsive frontend interface.
+A full-stack Recipe Management System built with **Spring Boot 3.1.5** and **Java 17**, featuring RESTful APIs and a responsive frontend interface.
 
 ## Features
 
-### Backend (Spring Boot 3.1.5 with Java 21)
+### Backend (Spring Boot 3.1.5 with Java 17)
 - ✅ Full CRUD operations for recipes
 - ✅ RESTful API endpoints following best practices
 - ✅ JPA/Hibernate for data persistence
@@ -25,7 +25,7 @@ A full-stack Recipe Management System built with **Spring Boot 3.1.5** and **Jav
 
 ## Technology Stack
 
-- **Backend**: Spring Boot 3.1.5, Java 21
+- **Backend**: Spring Boot 3.1.5, Java 17
 - **Database**: H2 (in-memory)
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Build Tool**: Maven
@@ -33,7 +33,7 @@ A full-stack Recipe Management System built with **Spring Boot 3.1.5** and **Jav
 
 ## Prerequisites
 
-- Java 21 or higher
+- Java 17 or higher
 - Maven 3.6+
 
 ## Getting Started
@@ -127,7 +127,7 @@ src/
 
 ## Development Highlights
 
-- **Modern Java Standards**: Uses Java 21 features and best practices
+- **Modern Java Standards**: Uses Java 17 features and best practices
 - **Clean Architecture**: Separation of concerns with layered architecture
 - **Error Handling**: Comprehensive exception handling with meaningful error messages
 - **Validation**: Input validation at both frontend and backend levels
